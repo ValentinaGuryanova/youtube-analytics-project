@@ -48,26 +48,41 @@ class Channel:
             file.write(json_text)
 
     def __str__(self):
+        """Возвращает название и ссылку на канал"""
+
         return f'{self.title}({self.url})'
 
     def __add__(self, other):
-        res = f'{self.quantity_sub} + {other.quantity_sub}'
-        return res
+        """Складывает количество подписчиков"""
+
+        return f'{self.quantity_sub} + {other.quantity_sub}'
 
     def __sub__(self, other):
+        """Вычитает количество подписчиков"""
+
         return f'{self.quantity_sub} - {other.quantity_sub}'
 
     def __lt__(self, other):
+        """Сравнивает количество подписчиков"""
+
         return f'{self.quantity_sub} < {other.quantity_sub}'
 
     def __le__(self, other):
+        """Сравнивает количество подписчиков"""
+
         return f'{self.quantity_sub} <= {other.quantity_sub}'
 
     def __gt__(self, other):
+        """Сравнивает количество подписчиков"""
+
         return f'{self.quantity_sub} > {other.quantity_sub}'
 
     def __ge__(self, other):
+        """Сравнивает количество подписчиков"""
+
         return f'{self.quantity_sub} >= {other.quantity_sub}'
 
     def __eq__(self, other):
+        """Сравнивает количество подписчиков"""
+
         return f'{self.quantity_sub} == {other.quantity_sub}'
