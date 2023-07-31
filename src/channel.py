@@ -36,7 +36,7 @@ class Channel:
     def get_service(cls):
         """Возвращает объект для работы с YouTube API"""
 
-        return build('youtube', 'v3', developerKey='AIzaSyAaLeB15LutRrAZvoCVnnB5cvg2YDvpJM0')
+        return build('youtube', 'v3', developerKey=value)
 
     def to_json(self, file_name):
         with open(file_name, 'wt') as file:
@@ -47,4 +47,27 @@ class Channel:
             json_text = json.dumps(text, ensure_ascii=False, indent=2)
             file.write(json_text)
 
+    def __str__(self):
+        return f'{self.title}({self.url})'
 
+    def __add__(self, other):
+        res = f'{self.quantity_sub} + {other.quantity_sub}'
+        return res
+
+    def __sub__(self, other):
+        return f'{self.quantity_sub} - {other.quantity_sub}'
+
+    def __lt__(self, other):
+        return f'{self.quantity_sub} < {other.quantity_sub}'
+
+    def __le__(self, other):
+        return f'{self.quantity_sub} <= {other.quantity_sub}'
+
+    def __gt__(self, other):
+        return f'{self.quantity_sub} > {other.quantity_sub}'
+
+    def __ge__(self, other):
+        return f'{self.quantity_sub} >= {other.quantity_sub}'
+
+    def __eq__(self, other):
+        return f'{self.quantity_sub} == {other.quantity_sub}'
