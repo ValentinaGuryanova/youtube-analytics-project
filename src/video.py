@@ -1,14 +1,13 @@
-
 import os
 from googleapiclient.discovery import build
 
 class Video:
 
     API_KEY: str = os.getenv('API_KEY')
-    YOUTYBE = build('youtube', 'v3', developerKey=API_KEY)
+    YOUTUBE = build('youtube', 'v3', developerKey=API_KEY)
     def __init__(self, video_id: str):
 
-        video = Video.YOUTYBE.videos().list(part='snippet,statistics', id=video_id).execute()
+        video = Video.YOUTUBE.videos().list(part='snippet,statistics', id=video_id).execute()
 
         try:
 
