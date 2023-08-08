@@ -52,5 +52,4 @@ class PlayList:
             video = Video(row)
             if int(video.like_count) > max_count_of_likes:
                 best_video = video
-
         return best_video.url
